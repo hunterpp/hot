@@ -1,0 +1,33 @@
+<html>
+
+<body>
+  <script type="text/javascript" src="kaltura-ovp-player.js"></script>
+  <script type="text/javascript" src="playkit-js-hotspots.js"></script>
+  <div id="kalturaPlayer" style="height:360px;width:640px">
+    <script type="text/javascript">
+      var playerContainer = document.querySelector("kalturaPlayer");
+      var config = {
+        targetId: "kalturaPlayer",
+        provider: {
+          partnerId: 3033241, 
+          uiConfId: 46516743,
+          env: {
+            serviceUrl: "https://cdnapisec.kaltura.com/api_v3"
+          }
+        },
+        playback: {
+          autoplay: true
+        },
+        plugins: {
+          'playkit-js-hotspots': {}
+        }
+      };
+      var player = KalturaPlayer.setup(config);
+      player.loadMedia({ entryId: '1_5sdkayrv' });
+      //playerContainer.appendChild(player.getView());
+      player.play();
+    </script>
+  </div>
+</body>
+
+</html>
